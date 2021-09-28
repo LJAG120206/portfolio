@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet"> 
+    <style>@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap');</style>
+    <script src="code.js"></script>
+    <title>Document</title>
+    <!-- rafraichir la page en auto
+    <meta http-equiv="refresh" content="3">-->
+</head>
+<body>
+    <header>
+        <nav id="navigation">
+            <ul>
+                <li href="#p1" id="acceuil" onclick="portfolio.changePlan('p1');">Accueil</li>
+                <li id="qui" onclick="portfolio.changePlan('p2');">Qui suis-je?</li>
+                <li id="competences" onclick="portfolio.changePlan('p3');">Mes compétences</li>
+                <li id="projets" onclick="portfolio.changePlan('p4');">Mes projets</li>
+                <li id="contact" onclick="portfolio.changePlan('p5');">Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <div id='main'>
+        <section class="overlay"></section>
+        <section class="planAvant" id="p1">
+            <div id="container_bvn">
+                <h1 id="bvn">
+                    <div class="contenant1" id="cont1">
+                        <span id="span1">Anthony.className="WebDev";</span>
+                    </div>
+                    <div class="contenant2" id="cont2">
+                        <span id="span2">Anthony.className="WebDev";</span>
+                    </div>
+                </h1>
+            </div>
+        </section>
+        <section class="plan" id="p2">
+            <div id="parcours">
+                <h2>Mon parcours</h2>
+                <img src="" alt="">
+                <p>
+                    Après un parcours scolaire technique puis commercial, j'ai été technico-commercial dans le secteur de la ventre de biens et services industriels. Pendant 12 ans, j'ai commercialisé des éléments de filtrations industriels, puis des équipements d'automatisation et enfin des solutions de pesage industriel .<br><br>
+                    Cette expérience m'a permis de développer une véritable appétence pour le travail en projet et pour les solutions techniques.<br><br>
+                </p>
+            </div>
+            <div id="perso">
+                <h2>Ma personnalité</h2>
+                <img src="" alt="">
+                <p>
+                    Bon vivant de nature, j'aime prendre la vie comme elle se présente et en tirer des opportunités. Je tire mon esprit combattif et mon abnégation de mes 2 sports "passions" qui sont la boxe anglaise et la course à pied. <br><br>
+                </p>
+            </div>
+        </section>
+        <section class="plan" id="p3">
+            <div id="aptitudes">
+                <h2>Mes aptitudes</h2>
+                <p>Mes expériences professionnelles et mon savoir-être me permettent aujourd'hui de :</p>
+                <ul>
+                    <li>Être capable d'analyser une problématique et d'y répondre techniquement</li>
+                    <li>Faire preuvre d'un sens du relationnel</li>
+                    <li>Apprendre quotidiennement</li>
+                    <li>Faire preuve de leadership</li>
+                    <li>Adaptabilité</li>
+                </ul>
+            </div>
+            <div id="dev">
+                <h2>Et le dev dans tout ça?</h2>
+                <p>
+                    Au cours de ma formation, nous avons étudié par projet. Nous avons commencé par les concept de base de HTML5 et de CSS3. Ensuite, nous avons découvert la POO par l'intermédiaire de JAVASCRIPT. Voici, ci-dessous, la liste des langages que j'ai étudié et ceux sur lesquels je travaille actuellement:
+                </p>
+                <div id="imgBox">
+                    <img src="./HTML.svg" alt="logo de HTML5">
+                    <img src="./css.png" alt="logo de CSS3">
+                    <img src="./js.png" alt="logo de JAVASCRIPT">
+                    <!-- <img src="./php.jpeg" alt="logo de PHP"> -->
+                    <img src="./MySQL.svg" alt="logo de MYSQL">
+                </div>
+            </div>
+        </section>
+        <section class="plan" id="p4">4</section>
+        <section class="plan" id="p5">5</section>
+        
+    </div>
+    <script>
+        portfolio.init();
+    </script>
+</body>
+</html>

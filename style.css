@@ -1,0 +1,330 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    transition: 3s all;
+}
+
+:root
+{
+    --dark: #41403C;
+    --rouge: #aa210f;
+    --orange: #D08856;
+    --blanc: #f1f1f1;
+}
+
+html
+{
+    font-size: 14px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: var(--blanc) ;
+}
+/* --- NAVIGATION ---------------------------- */
+nav
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid var(--dark);
+}
+
+nav ul
+{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+nav li
+{
+    list-style-type: none;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 15px 0 0 0;
+    width: 20%;
+    height: calc(100% - 15px);
+    background-color: var(--blanc);
+    color: var(--dark);
+}
+
+/* --- MAIN ---------------------------------- */
+#main
+{
+    position: absolute;
+    top: 51px;
+    bottom: 0;
+    width: 100%;
+    perspective: 5000px;
+}
+
+p
+{
+    text-align: justify;
+}
+
+#main h2
+{
+    text-align: center;
+}
+
+.plan
+{
+    position: absolute;
+    text-align: center;
+    transform: translateZ(-3000px);
+    visibility: hidden;
+}
+
+.planAvant
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;    
+    transform: translateZ(0);
+    opacity: 1;
+}
+
+#p1
+{
+    background: url(./fond\ nb.jpg);
+    background-size: cover;
+}
+
+
+
+#container_bvn
+{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--blanc);
+    padding: 0 10px;
+    right: 15%;
+    top: 17%;
+}
+
+.anim1
+{
+    transform: translateY(-100%) rotateX(-90deg);
+    opacity: 0;
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace !important;
+
+}
+
+.anim2
+{
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 1;
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace !important;
+}
+
+#bvn>div>span
+{
+    display: inline-block;
+    text-align: center;
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+    border: #f1f1f1 1px solid;
+}
+
+#span1
+{
+    transform-origin: bottom;
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 1;
+}
+
+#span2
+{
+    transform-origin: top;
+    transform: translateY(100%) rotateX(-0deg);
+    opacity: 1;
+    padding-top: 5px;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+    border: #f1f1f1 1px solid;
+}
+
+
+.cont2
+{
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+
+
+
+#bvn
+{
+    position: relative;
+    height: 100%;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+#p2
+{
+    background-color: rgb(43, 63, 63);
+    display: flex;
+    flex-direction: row;
+    padding: auto;
+}
+
+#p2>div
+{
+    border: aliceblue solid 2px;
+    width: 35vw;
+    margin: 15vh;
+    padding: 10px;
+}
+
+#p3
+{
+    color: var(--blanc);
+    background-color: var(--dark);
+    display: flex;
+}
+
+#aptitudes, #dev
+{
+    border: var(--blanc) 1px solid;
+}
+
+#imgBox
+{
+    display: flex;
+}
+
+#imgBox img
+{
+    height: 50px;
+    width: 50px;
+}
+
+#p4
+{
+    background-color: rgb(100, 102, 189);
+}
+
+#p5
+{
+    background-color: rgb(245, 202, 10);
+}
+
+.overlay
+{
+    position: absolute;
+    background-color: var(--orange);
+    width: 100%;
+    height: 100%;
+}
+
+/* --- FOOTER -------------------------------- */
+
+footer
+{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+
+}
+
+
+/* --- ANIMATIONS ---------------------------- */
+
+
+.animationVersArriere
+{
+    animation-name: planVersArriere;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.animationVersAvant
+{
+    animation-name: planVersAvant;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+
+}
+
+
+
+@keyframes planVersArriere
+{
+    
+    0%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;    
+        transform: translateZ(0);
+        opacity: 1;
+
+    }
+
+    50%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -90%;
+        width: 100%;    
+        border-radius: 15px;
+        transform: translateZ(-10000px);
+
+    }
+
+    100%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transform: translateZ(-30000px);
+        opacity: 0;
+    }
+}
+
+@keyframes planVersAvant
+{
+    0%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0%;
+        width: 100%;
+        transform: translateZ(-20000px);
+        opacity: 0;
+    }
+
+    50%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 45%;
+        width: 100%;
+        transform: translateZ(-5000px);
+        border-radius: 15px;
+    }
+
+    100%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;    
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
