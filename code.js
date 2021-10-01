@@ -18,43 +18,16 @@ function createElement(parentId, tag, id)
 portfolio = 
 {
     gestionPlan : "",
+    letterSpan1 : "",
+    letterSpan2 : "",
 
     init: ()=>
     { 
         console.log("portfolio.init()");
         portfolio.gestionPlan = "p1";
 
-        portfolio.animateTitle();
-        setInterval('portfolio.animateTitle();', 7000);
-    },
-
-    changePlan: (plan)=>
-    {
-        console.log("portfolio.changePlan");
-        if(plan != portfolio.gestionPlan)
-        {
-            $(plan).className = "plan";
-            $(portfolio.gestionPlan).className = "plan planAvant";
-            $(plan).className = "animationVersAvant";
-            $(portfolio.gestionPlan).className = "animationVersArriere";
-
-
-            //setTimeout("$('"+plan+"').className = 'animation3';", 4001);
-            //setTimeout("$('"+portfolio.gestionPlan+"').className = 'plan';", 4001);
-
-            //setTimeout("$(plan).className = 'plan planAvant';", 4001);
-
-
-            portfolio.gestionPlan = plan;
-        }
-    },
-
-    animateTitle: ()=>
-    {
-
-        
-
         let spanContainers = document.querySelectorAll("#container_bvn div");
+        console.log(spanContainers)
 
         spanContainers.forEach(item => 
         {
@@ -67,22 +40,69 @@ portfolio =
             })
         });
 
-        $("cont1").className = "anim1";
-        $("cont2").className = "anim2";
+        portfolio.letterSpan1 = document.querySelectorAll("#span1 span");
+        portfolio.letterSpan2 = document.querySelectorAll("#span2 span");
 
-        setTimeout("portfolio.resetBvn();",3500);
+        //portfolio.animateTitle();
+    },
+
+    changePlan: (plan)=>
+    {
+        console.log("portfolio.changePlan");
+        if(plan != portfolio.gestionPlan)
+        {
+            $(plan).className = "plan";
+            $(portfolio.gestionPlan).className = "plan planAvant";
+            $(plan).className = "animationVersAvant";
+            $(portfolio.gestionPlan).className = "animationVersArriere";
+
+            portfolio.gestionPlan = plan;
+        }
+    },
+
+    animateTitle: ()=>
+    {
+        $("span2").style.transform = "translateY(-50%) rotateX(0deg)";
+        portfolio.letterSpan1.forEach((lettre)=>
+        {
+            lettre.className = "anim1";
+        });
+
+        portfolio.letterSpan2.forEach((lettre)=>
+        {
+            lettre.className = "anim2";
+        });
+
+        setTimeout("portfolio.resetBvn();",4200);
 
     },
 
     resetBvn: ()=>
-    {0
+    {
+        $("span2").style.transform = "translateY(0%) rotateX(-90deg)";
+        portfolio.letterSpan1.forEach((lettre)=>
+        {
+            lettre.classList.remove("anim1")
+        });
 
-        $("cont1").className = "contenant1";
-        $("cont2").className = "contenant2";
+        portfolio.letterSpan2.forEach((lettre)=>
+        {
+            lettre.classList.remove("anim2");
+        });
 
-        $("span1").innerHTML = 'Anthony.className="WebDev";';
-        $("span2").innerHTML = 'Anthony.className="WebDev";';
+
+
+
+        // $("cont1").style.transition = "3s all";
+        // $("cont2").style.transition = "3s all";
+
+        // $("cont1").className = "contenant1";
+        // $("cont2").className = "contenant2";
+
+        // $("span1").innerHTML = 'Anthony.className="WebDev";';
+        // $("span2").innerHTML = 'Anthony.className="WebDev";';
     }
 
     
 }
+

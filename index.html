@@ -18,19 +18,22 @@
     <header>
         <nav id="navigation">
             <ul>
-                <li href="#p1" id="acceuil" onclick="portfolio.changePlan('p1');">Accueil</li>
-                <li id="qui" onclick="portfolio.changePlan('p2');">Qui suis-je?</li>
-                <li id="competences" onclick="portfolio.changePlan('p3');">Mes compétences</li>
-                <li id="projets" onclick="portfolio.changePlan('p4');">Mes projets</li>
-                <li id="contact" onclick="portfolio.changePlan('p5');">Contact</li>
+                <a href="#p1" id="accueil" onclick="portfolio.changePlan('p1');">Accueil</a>
+                <a href="#p2" id="qui" onclick="portfolio.changePlan('p2');">Qui suis-je?</a>
+                <a href="#p3" id="competences" onclick="portfolio.changePlan('p3');">Mes compétences</a>
+                <a href="#p4" id="projets" onclick="portfolio.changePlan('p4');">Mes projets</a>
+                <a href="#p5" id="contact" onclick="portfolio.changePlan('p5');">Contact</a>
             </ul>
         </nav>
     </header>
     <div id='main'>
+
         <section class="overlay"></section>
+
+
         <section class="planAvant" id="p1">
             <div id="container_bvn">
-                <h1 id="bvn">
+                <h1 id="bvn" onclick="portfolio.animateTitle();">
                     <div class="contenant1" id="cont1">
                         <span id="span1">Anthony.className="WebDev";</span>
                     </div>
@@ -40,51 +43,170 @@
                 </h1>
             </div>
         </section>
+
+
         <section class="plan" id="p2">
-            <div id="parcours">
-                <h2>Mon parcours</h2>
-                <img src="" alt="">
-                <p>
-                    Après un parcours scolaire technique puis commercial, j'ai été technico-commercial dans le secteur de la ventre de biens et services industriels. Pendant 12 ans, j'ai commercialisé des éléments de filtrations industriels, puis des équipements d'automatisation et enfin des solutions de pesage industriel .<br><br>
-                    Cette expérience m'a permis de développer une véritable appétence pour le travail en projet et pour les solutions techniques.<br><br>
-                </p>
+
+            <img id="illustration" src="./images/boxing-gloves-375473_1920.jpg" alt="">
+
+            <div id="moi">
+
+                <div id="parcours">
+                    <h2>Mon parcours</h2>                
+                    <p>
+                        Après un parcours scolaire technique, puis commercial, j'ai été technico-commercial dans le secteur de la vente de biens et services industriels.
+                    </p>
+                    <p>
+                        Pendant 12 ans, j'ai commercialisé des éléments de filtrations industriels, puis des équipements d'automatisation et enfin des solutions de pesage industriel .
+                    </p>
+                    <p>
+                        Cette expérience m'a permis de développer une véritable appétence pour le travail en projet et pour les solutions techniques.
+                    </p>
+                </div>
+
+                <div id="perso">
+                    <h2>Ma personnalité</h2>
+                    <img src="" alt="">
+                    <p>
+                        Bon vivant de nature, j'aime prendre la vie comme elle se présente et en tirer des opportunités.
+                    </p>
+                    <p>
+                        Je tire mon esprit combattif et mon abnégation de mes 2 sports "passions" qui sont la boxe anglaise et la course à pied.
+                    </p>
+                </div>
+
             </div>
-            <div id="perso">
-                <h2>Ma personnalité</h2>
-                <img src="" alt="">
-                <p>
-                    Bon vivant de nature, j'aime prendre la vie comme elle se présente et en tirer des opportunités. Je tire mon esprit combattif et mon abnégation de mes 2 sports "passions" qui sont la boxe anglaise et la course à pied. <br><br>
-                </p>
-            </div>
+
         </section>
+
+
         <section class="plan" id="p3">
+
             <div id="aptitudes">
                 <h2>Mes aptitudes</h2>
-                <p>Mes expériences professionnelles et mon savoir-être me permettent aujourd'hui de :</p>
                 <ul>
+                    <p>Mes expériences professionnelles et mon savoir-être me permettent aujourd'hui de :</p>
                     <li>Être capable d'analyser une problématique et d'y répondre techniquement</li>
                     <li>Faire preuvre d'un sens du relationnel</li>
                     <li>Apprendre quotidiennement</li>
                     <li>Faire preuve de leadership</li>
-                    <li>Adaptabilité</li>
+                    <li>M'adapter</li>
                 </ul>
             </div>
+
             <div id="dev">
-                <h2>Et le dev dans tout ça?</h2>
+                <h2>Et le dev dans tout ça ?</h2>
                 <p>
-                    Au cours de ma formation, nous avons étudié par projet. Nous avons commencé par les concept de base de HTML5 et de CSS3. Ensuite, nous avons découvert la POO par l'intermédiaire de JAVASCRIPT. Voici, ci-dessous, la liste des langages que j'ai étudié et ceux sur lesquels je travaille actuellement:
+                    Au cours de ma formation, nous avons étudié par projet. Nous avons commencé par les concepts de base de HTML5 et de CSS3.
+                </p>
+                <p>
+                    Ensuite, nous avons découvert la POO par l'intermédiaire de JAVASCRIPT.
+                </p>
+                <p>
+                    Voici, ci-dessous, la liste des langages que j'ai étudié, et ceux sur lesquels je travaille actuellement:
                 </p>
                 <div id="imgBox">
-                    <img src="./HTML.svg" alt="logo de HTML5">
-                    <img src="./css.png" alt="logo de CSS3">
-                    <img src="./js.png" alt="logo de JAVASCRIPT">
-                    <!-- <img src="./php.jpeg" alt="logo de PHP"> -->
-                    <img src="./MySQL.svg" alt="logo de MYSQL">
+                    <img src="images/HTML.png" alt="logo de HTML5">
+                    <img src="images/css.png" alt="logo de CSS3">
+                    <img src="images/js.png" alt="logo de JAVASCRIPT">
+                    <img src="images/php.png" alt="logo de PHP">
+                    <img src="images/MySQL.svg" alt="logo de MYSQL">
+                    <img src="images/github.png" alt="logo de github">
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="plan" id="p4">
+
+            <h2>Mes projets significatifs</h2>
+
+            <div class="card" id="card1">
+                <h3>
+                    Casse brique full JS (sans canvas)
+                </h3>
+                <img src="./images/projets/casse_briques.png" alt="screen casse_briques">
+                <p>
+                    Descriptif: Jeu développer entièrement en JAVASCRIPT natif. Il m'a permis d'appréhender le concept de POO et les bases de JAVASCRIPT.
+                </p>
+                <p>
+                    Technologies utilisée: JAVASCRIPT, CSS.
+                </p>
+                <a href="https://github.com/LJAG120206/casse_brique_js_natif">
+                    <img src="./images/github.png" alt="logo clickable github">
+                </a>
+            </div>
+
+            <div class="card" id="card2">
+                <h3>
+                    DSM
+                </h3>
+                <img src="./images/projets/dsm.png" alt="screen application dsm">
+                <p>
+                    Descriptif: Application de gestion d'école de danse. Tout est généré en JAVASCRIPT, avec un moteur PHP et une base de donnée MySQL.
+                </p>
+                <p>
+                    Technologies utilisée: JAVASCRIPT, PHP, CSS, MySQL.
+                </p>
+                <a href="https://github.com/LJAG120206/dsm">
+                    <img src="./images/github.png" alt="logo clickable github">
+                </a>
+            </div>
+
+            <div class="card" id="card3">
+                <h3>
+                    REMOTE
+                </h3>
+                <img src="./images/projets/remote.png" alt="screen application commande">
+                <p>
+                    Descriptif: Application de commande de lumière depuis un premier document (remote) HTML vers un second document (light panel). Création d'une première maquette HTML avec son CSS, production d'une commande générée en JAVASCRIPT et une liaison vers une page PHP via un XMLHTTPRequest (AJAX).
+                </p>
+                <p>
+                    Technologies utilisée: JAVASCRIPT (création d'éléments, AJAX, son), PHP, CSS, HTML.
+                </p>
+                <a href="https://github.com/LJAG120206/remote_js">
+                    <img src="./images/github.png" alt="logo clickable github">
+                </a>
+            </div>
+
+            <div class="card" id="card4">
+                <h3>
+                    REMOTE
+                </h3>
+                <img src="./images/projets/portfolio.png" alt="screen portfolio">
+                <p>
+                    Descriptif: Création de mon premier site web déployé. Dans ce projet, j'ai mis en place différentes techniques CSS (perspective, keyframes,grid...).
+                </p>
+                <p>
+                    Technologies utilisée: HTML, CSS, JAVASCRIPT
+                </p>
+                <a href="https://github.com/LJAG120206/portfolio">
+                    <img src="./images/github.png" alt="logo clickable github">
+                </a>
+            </div>
+
+        </section>
+
+
+        <section class="plan" id="p5">
+            <div id="contacter">
+                <h1>Formulaire de contact</h1>
+                <div id="formContainer">
+                    <form id="formulaire" action="" method="post">
+                        <input type="text" name="mail" placeholder="Votre prénom">
+                        <label for="prenom">Votre prénom</label>
+                        <input type="text" name="mail" placeholder="Votre nom">
+                        <label for="prenom">Votre nom</label>
+                        <input type="email" name="mail" placeholder="Votre adresse e-mail">
+                        <label for="mail">Votre adresse e-mail</label>
+                        <textarea name="textArea" id="textArea" cols="20" rows="6"></textarea>
+                        <label for="textArea">Veuillez saisir votre message.</label>
+                        <input id="valider" type="button" value="Valider">
+                    </form>
                 </div>
             </div>
         </section>
-        <section class="plan" id="p4">4</section>
-        <section class="plan" id="p5">5</section>
         
     </div>
     <script>
