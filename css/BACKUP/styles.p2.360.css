@@ -1,0 +1,46 @@
+#p2
+{
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#illustration
+{
+    height: 90vh;
+    width: 60%;
+}
+
+
+#moi
+{
+    height: 90vh;
+    width: 30%;
+    min-width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+#parcours
+{
+    height: 45%;
+    width: 100%;
+    margin-top: 15px; 
+}
+
+#perso
+{
+    height: 50%;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#moi p
+{
+    margin-bottom: 0.5rem;
+    display: block;
+}

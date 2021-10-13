@@ -1,0 +1,521 @@
+/* @media screen and (min-width: 641px) */
+
+:root
+{
+    --dark: #3E3939;
+    --noir: #2c2727;
+    --orange: #ff7517;
+    --blanc: #F6F4F4;
+}
+
+html,
+body,
+header,main,footer,nav,
+nav ul, nav li,
+div
+{
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    font-size: 14px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: var(--blanc) ;
+    background: var(--noir);
+    height: 100vh;
+    
+}
+
+hr
+{
+    display: none;
+}
+
+/* === SECTIONS ================================= */
+
+header
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 49px;
+    overflow: hidden;
+    border-bottom: var(--noir);
+    background-color: var(--dark);
+    box-shadow: 0px 2px 20px 2px black;
+    z-index: 100;
+}
+
+main
+{
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    perspective: 8000px;
+    overflow: hidden;
+    background: radial-gradient(rgba(0,0,0,0),black), linear-gradient(rgba(255,255,255,0), black);
+    z-index: 0;
+}
+
+section,
+article
+{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+/* === NAV ====================================== */
+
+#nav_button
+{
+    display: none;
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: 50px;
+    z-index: 100;
+}
+
+#nav
+{
+    position: absolute;
+    top: 0px;
+    left: -200px;
+    width: 100%;
+    height: 100%;
+    transition: 1s all;
+}
+
+#nav ul
+{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    padding-left: 50px;
+}
+
+#nav li
+{
+    list-style-type: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: center;
+    background-color: var(--dark);
+    color: var(--orange);
+    transition: 0.5s;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 20px 0px black;
+    z-index: 0;
+}
+
+#nav li:hover
+{
+    background-color: rgba(255, 117, 23, 0.25);
+    font-weight: 900;
+    box-shadow: 0px 0px 20px 0px black;
+    z-index: 100;
+}
+
+#nav a, 
+#nav a:link, 
+#nav a:visited
+{
+    color: var(--orange);
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+
+/* === MAIN ===================================== */
+
+#main h2,
+#main p
+{
+    text-align: justify;
+}
+
+#main h2,
+#main h3
+{
+    border-bottom: 1px solid var(--orange);
+}
+
+/* --- PLAN ------------------------------------ */
+
+#main .plan
+{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    transform: translateZ(-3000px);
+    visibility: hidden;
+}
+
+#main .plan > img,
+#main .animationVersAvant > img,
+#main .animationVersArriere > img
+{
+    width: 50%;
+}
+
+/* --- OVERLAY ---------------------------------- */
+
+#main .overlay
+{
+    position: absolute;
+    background: var(--dark);
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --- ANIMATIONS ------------------------------- */
+
+#main .animationVersArriere
+{
+    animation-name: planVersArriere;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+#main .animationVersAvant
+{
+    animation-name: planVersAvant;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes planVersArriere
+{
+    
+    0%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        transform: translateZ(0) rotateY(0deg) rotateX(0deg);
+        opacity: 1;
+    }
+    
+    25%
+    {
+        opacity: 0.5;
+    }
+
+    50%
+    {
+        top: -80%;
+        left: -90%;
+        transform: translateZ(-15000px) rotateY(-90deg) rotateX(-10deg);
+    }
+
+    100%
+    {
+        position: absolute;
+        top: 90%;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateZ(-30000px) rotateY(-180deg) rotateX(0deg);
+        opacity: 0;
+    }
+}
+
+@keyframes planVersAvant
+{
+    0%
+    {
+        position: absolute;
+        top: 90%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateZ(-30000px) rotateY(-180deg) rotateX(0deg);
+        opacity: 0;
+    }
+
+    50%
+    {
+        position: absolute;
+        top: -80%;
+        left: 90%;
+        transform: translateZ(-15000px) rotateY(-270deg) rotateX(15deg);
+    }
+
+    75%
+    {
+        opacity: 0.5;
+    }
+
+    100%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;    
+        height: 100%;
+        transform: translateY(0) rotateY(-360deg) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+
+/* === PAGES ==================================== */
+
+#p1,
+#p2,
+#p3,
+#p4,
+#p5
+{
+    display: flex;
+    justify-content: space-around;
+    background: var(--dark) no-repeat center;
+    background-size: cover;
+}
+
+.illustration
+{
+    margin: 20px;
+    width: 50%;
+    box-shadow: 0 0 15px black;
+    background: var(--dark) no-repeat center;
+    background-size: cover;
+}
+
+.page
+{
+
+    margin: 20px 20px 20px 0px;
+    padding: 20px;
+    width: 50%;
+    box-shadow: 0 0 15px black;
+    /*overflow-y: scroll;*/
+}
+
+.logos
+{
+    margin: 40px 0 0 0;
+    padding: 20px 0 0 0;
+    border-top: 1px solid var(--orange);
+    text-align: center;
+}
+
+/* === PAGE 1 =================================== */
+
+#p1
+{
+    background-image: url(../pages/p1/illustration.jpg);
+    justify-content: right;
+
+}
+
+#p1 .illustration
+{
+    display: none;
+}
+
+#p1 .page
+{
+    background-color: var(--dark);
+    text-align: center;
+    color: var(--orange);
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Courier,'Courier New', monospace;
+    margin-top: 100px;
+    height: 60px;
+    width: 41%;
+    border-radius: 7px;
+}
+
+#p1 .page div
+{
+    margin-top: 15px;
+}
+
+
+/* === PAGE 2 =================================== */
+
+#p2 div
+{
+    margin-bottom: 50px;
+}
+/* === PAGE 3 =================================== */
+
+.logos img
+{
+    margin: 10px;
+}
+
+#p3 div
+{
+    margin-bottom: 50px;
+}
+
+
+/* === PAGE 4 =================================== */
+
+#p4
+{
+    overflow: auto;
+}
+
+#p4 .page
+{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#p4 .page h2
+{
+    text-align: center;
+    width: 100%;
+}
+
+.card
+{
+    height: 150px;
+    width: 35%;
+    padding: 5px;
+    margin: 0px 0px 20px 10%;
+    overflow: hidden;
+    border: 1px solid var(--orange);
+    overflow-y: scroll;
+}
+
+#p4 .card img
+{
+    height: 150px;
+}
+
+#p4 .page .card h3
+{
+    margin: 0 5px;
+}
+
+.card a,
+.card a:visited,
+.card a:link
+{
+    text-decoration: none;
+    text-decoration: underline;
+    color: var(--blanc);
+    font-size: 16px;
+}
+
+.card a:hover
+{
+    color: var(--orange);
+}
+
+/* === PAGE 5 =================================== */
+
+#p5
+{
+    background-color: var(--dark);
+}
+
+#p5 .illustration
+{
+    opacity: 0.9;
+}
+
+#p5 .page
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#p5 form
+{
+    margin-top: 25px;
+    margin-left: 15%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.wasValidated
+{
+    background-color: rgba(95, 202, 33, 0.6);
+}
+
+.valid-feedback
+{
+    display: none;
+}
+
+.invalid-feedback
+{
+    display: none;
+}
+
+#popup
+{
+    width: auto !important;
+    height: 75px !important;
+    position: absolute !important;
+    top: 350px;
+    background-color: var(--orange);
+    border-radius: 10px;
+    font-size: 25px;
+    text-align: center;
+    padding-top: calc((75px - 25px)/2);
+    z-index: 20000;
+}
+
+input, textarea
+{
+    margin-top: 5%;
+    border-radius: 4px;
+}
+
+label
+{
+    font-style: italic;
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+#valider
+{
+    width: 20%;
+    margin-left: 40%;
+    color: var(--blanc);
+    font-size: 18px;
+    font-weight: bold;
+    border: var(--noir) 1px solid;
+    background-color: var(--orange);
+
+}

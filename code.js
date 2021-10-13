@@ -15,94 +15,153 @@ function createElement(parentId, tag, id)
     }
 }
 
+window.onresize = ()=>
+{
+    if(window.innerWidth < 640)
+    {
+        $('nav').style.left = "-300px";
+    }
+    else
+    {
+        $('nav').style.left = "0px";
+    }
+}
+
 portfolio = 
 {
-    gestionPlan : "",
-    letterSpan1 : "",
-    letterSpan2 : "",
+    letterSpan1: "",
+    letterSpan2: "",
+    flagAnim : false,
+    plan: "",
 
     init: ()=>
     { 
         console.log("portfolio.init()");
-        portfolio.gestionPlan = "p1";
 
-        let spanContainers = document.querySelectorAll("#container_bvn div");
-        console.log(spanContainers)
+        /* --- Plan ----------------------------- */
 
-        spanContainers.forEach(item => 
+        portfolio.plan = "p1";
+
+        /* --- Menu ----------------------------- */
+
+        let a = document.querySelectorAll("#nav ul a");
+        a.forEach(link => 
         {
-            let letters = item.children[0].textContent.split('');
-            item.children[0].innerHTML = "";
-
-            letters.forEach((el, index) =>
-            {
-                item.children[0].innerHTML += '<span style ="transition-delay :'+(0.1*index)+'s">'+el+'</span>';
-            })
+           link.setAttribute("href", "#");
         });
 
-        portfolio.letterSpan1 = document.querySelectorAll("#span1 span");
-        portfolio.letterSpan2 = document.querySelectorAll("#span2 span");
+        /* --- Bouton du menu ------------------- */
 
-        //portfolio.animateTitle();
+        let e = document.createElement("img");
+        e.id  = "nav_button";
+        e.src = "./images/icones/menu.png";
+        e.alt = "Icone de menu";
+        e.onclick = portfolio.menuSwitch;
+        $("header").prepend(e);
+
+        /* --- Window -------------------------- */
+        window.onresize();
+
+        /* --- Form   -------------------------- */
+        
+        portfolio.formSend();
     },
 
-    changePlan: (plan)=>
+    formSend: ()=>
     {
-        console.log("portfolio.changePlan");
-        if(plan != portfolio.gestionPlan)
+        console.log("portfolio.formCtrl();");
+        $("formulaire").addEventListener("submit", function(event)
         {
-            $(plan).className = "plan";
-            $(portfolio.gestionPlan).className = "plan planAvant";
-            $(plan).className = "animationVersAvant";
-            $(portfolio.gestionPlan).className = "animationVersArriere";
+            let formulaire = $("formulaire");
+            event.preventDefault();
+            console.log("portfolio.formSend(); + submit");
 
-            portfolio.gestionPlan = plan;
+            
+            // if(!formulaire.checkValidity())
+            // {
+            //     console.log("checkValidity");
+            //     event.stopPropagation();
+            // }
+
+            
+            let data = new FormData(formulaire);
+            let ajax = new XMLHttpRequest();
+            ajax.open("POST","back.php", true);
+            ajax.onreadystatechange = ()=>
+            {
+                if(ajax.readyState == ajax.DONE)
+                {
+                    if(ajax.statusText == "OK")
+                    {
+                        console.log("ajax.ready");
+
+                        if( ajax.responseText == "Votre mail a bien été expédié!")
+                        {
+                            console.log("test1");
+                            formulaire.reset();
+                            createElement("p5", "div","popup");
+                            $("popup").style.width = "200px";
+                            $("popup").style.height = "150px";
+                            $("popup").style.position = "absolute";
+                            $("popup").style.zindex = "100000";
+                            $("popup").innerHTML = ajax.responseText;
+                            $("popup").setAttribute("onclick", "portfolio.killElement(\"popup\");");
+                        }
+                        else
+                        {
+                            console.log("test2");
+                            createElement("p5", "div","popup");
+                            $("popup").style.width = "200px";
+                            $("popup").style.height = "150px";
+                            $("popup").style.position = "absolute";
+                            $("popup").style.zindex = "100000";
+                            $("popup").innerHTML = ajax.responseText;
+                            $("popup").setAttribute("onclick", "portfolio.killElement(\"popup\");");
+                        }
+                    }
+                }
+
+            }
+            ajax.send(data);
+        })
+    },
+
+    killElement: (id)=>
+    {
+        $(id).remove();
+    },
+
+    menuSwitch: ()=>
+    {
+        if(window.innerWidth <= 640)
+        {
+            if($("nav").style.left == "-300px")
+            {
+                $("nav").style.left = "-50px";
+            }
+            else
+            {
+                $("nav").style.left = "-300px";
+            }
+        }
+        else
+        {
+            $("nav").style.left = "0px";
         }
     },
 
-    animateTitle: ()=>
+    planSwitch: (plan)=>
     {
-        $("span2").style.transform = "translateY(-50%) rotateX(0deg)";
-        portfolio.letterSpan1.forEach((lettre)=>
+        console.log("portfolio.planSwitch");
+        if(plan != portfolio.plan)
         {
-            lettre.className = "anim1";
-        });
+            $(plan).className = "animationVersAvant";
+            $(portfolio.plan).className = "animationVersArriere";
 
-        portfolio.letterSpan2.forEach((lettre)=>
-        {
-            lettre.className = "anim2";
-        });
+            portfolio.plan = plan;
 
-        setTimeout("portfolio.resetBvn();",4200);
-
-    },
-
-    resetBvn: ()=>
-    {
-        $("span2").style.transform = "translateY(0%) rotateX(-90deg)";
-        portfolio.letterSpan1.forEach((lettre)=>
-        {
-            lettre.classList.remove("anim1")
-        });
-
-        portfolio.letterSpan2.forEach((lettre)=>
-        {
-            lettre.classList.remove("anim2");
-        });
-
-
-
-
-        // $("cont1").style.transition = "3s all";
-        // $("cont2").style.transition = "3s all";
-
-        // $("cont1").className = "contenant1";
-        // $("cont2").className = "contenant2";
-
-        // $("span1").innerHTML = 'Anthony.className="WebDev";';
-        // $("span2").innerHTML = 'Anthony.className="WebDev";';
-    }
-
-    
+            portfolio.menuSwitch();
+        }
+    }    
 }
 

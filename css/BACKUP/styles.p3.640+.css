@@ -1,0 +1,65 @@
+#p3
+{
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-around;
+}
+
+#brain
+{
+    width: 60%;
+    height: 90vh;
+}
+
+#brain img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#aptidev
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 39%;
+    height: 100%;
+
+}
+
+#aptitudes, #dev
+{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0 15px;
+    font-size: 1.2rem;
+}
+
+#aptitudes li
+{
+    list-style-type: none;
+}
+
+#parcours>h2
+{
+    font-size: 3rem;
+}
+
+#perso>h2
+{
+    font-size: 3rem;
+}
+
+#imgBox
+{
+    text-align: center;
+    justify-content: space-around;
+}
+
+#imgBox img
+{
+    display: inline-block;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}

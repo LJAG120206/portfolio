@@ -1,0 +1,587 @@
+/* @media screen and (min-width: 641px) */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    transition: 3s all;
+}
+
+:root
+{
+    --dark: #3E3939;
+    --noir: #2c2727;
+    --orange: #ff7517;
+    --blanc: #F6F4F4;
+}
+
+html
+{
+    font-size: 14px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: var(--blanc) ;
+    height: 100vh;
+}
+
+/* --- NAVIGATION --------------------------- */
+
+#burger
+{
+    display: none;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    left: 5px;
+}
+
+#navigation
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 49px;
+    border-bottom: 2px solid var(--noir);
+}
+
+#navigation ul
+{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    background-color: var(--dark);
+}
+
+#navigation li
+{
+    list-style-type: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0 0 0;
+    width: 20%;
+    height: calc(100% - 10px);
+    background-color: var(--dark);
+    color: var(--orange);
+}
+#navigation a, 
+#navigation a:link, 
+#navigation a:visited
+{
+    color: var(--orange);
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+#navigation li:hover
+{
+    transition: 2s !important;
+    background-color: rgba(255, 117, 23, 0.5);
+    font-weight: 900;
+}
+
+/* --- MAIN et PLAN ------------------------- */
+#main
+{
+    position: absolute;
+    top: 51px;
+    bottom: 0;
+    width: 100%;
+    perspective: 5000px;
+}
+
+p
+{
+    text-align: justify;
+}
+
+#main h2
+{
+    text-align: center;
+}
+
+.plan
+{
+    position: absolute;
+    text-align: center;
+    transform: translateZ(-3000px);
+    visibility: hidden;
+}
+
+.planAvant
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;    
+    transform: translateZ(0);
+    opacity: 1;
+}
+
+/* --- OVERLAY ------------------------------ */
+
+.overlay
+{
+    position: absolute;
+    background-color: var(--noir);
+    width: 100%;
+    height: 100%;
+}
+
+/* --- FOOTER ------------------------------- */
+
+footer
+{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+
+}
+
+/* --- ANIMATIONS --------------------------- */
+
+.animationVersArriere
+{
+    animation-name: planVersArriere;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.animationVersAvant
+{
+    animation-name: planVersAvant;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes planVersArriere
+{
+    
+    0%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;    
+        transform: translateZ(0);
+        opacity: 1;
+    }
+
+    50%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -90%;
+        width: 100%;    
+        border-radius: 15px;
+        transform: translateZ(-10000px);
+
+    }
+
+    100%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transform: translateZ(-30000px);
+        opacity: 0;
+        border: solid 2px var(--blanc);
+    }
+}
+
+@keyframes planVersAvant
+{
+    0%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0%;
+        width: 100%;
+        transform: translateZ(-20000px);
+        opacity: 0;
+        border: solid 2px var(--blanc);
+    }
+
+    50%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 45%;
+        width: 100%;
+        transform: translateZ(-5000px);
+        border-radius: 15px;
+    }
+
+    100%
+    {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;    
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+
+/* === PAGE 1 =================================== */
+
+#p1
+{
+    background: url(../images/fond-nb.jpg) no-repeat center;
+    background-size: cover;
+}
+
+#p1 img
+{
+    display: none;
+}
+
+#container_bvn
+{
+    position: absolute;
+    background-color: rgba(44, 39, 39, 0.7);
+    color: rgba(255, 117, 23, 1);
+    padding: 0 10px;
+    right: 10%;
+    top: 17%;
+    height: 50px;
+    border-radius: 5px;
+}
+
+#bvn span
+{
+    display: inline-block;
+    text-align: center;
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+}
+
+#span1
+{
+    transform-origin: bottom;
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 1;
+}
+
+.anim1
+{
+    transition: 3s all;
+    transform: translateY(-100%) rotateX(-90deg);
+    opacity: 0;
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace !important;
+}
+
+#span2
+{
+    transform-origin: top;
+    transform: translateY(0%) rotateX(-90deg);
+    opacity: 1;
+}
+
+.anim2
+{
+    transition: 3s all;
+    transform: translateY(-100%) rotateX(0deg);
+    opacity: 1;
+    font-family: 'Courier Prime', 'Courier New', Courier, monospace !important;
+}
+
+
+.contenant1
+{
+    text-align: center;
+}
+
+.contenant2
+{
+    text-align: center;
+    margin-top: -10px;
+}
+
+#bvn
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* === PAGE 2 =================================== */
+
+#p2
+{
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-around;
+}
+
+
+#illustration
+{
+    height: 90vh;
+    width: 60%;
+}
+
+
+#moi
+{
+    height: 90vh;
+    width: 30%;
+    min-width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+#parcours
+{
+    height: 45%;
+    width: 100%;
+    margin-top: 15px; 
+}
+
+#perso
+{
+    height: 50%;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#moi p
+{
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+
+/* === PAGE 3 =================================== */
+
+#p3
+{
+    background-color: var(--dark);
+    display: flex;
+    justify-content: space-around;
+}
+
+#brain
+{
+    width: 60%;
+    height: 90vh;
+}
+
+#brain img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#aptidev
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 39%;
+    height: 100%;
+
+}
+
+#aptitudes, #dev
+{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0 15px;
+    font-size: 1.2rem;
+}
+
+#aptitudes li
+{
+    list-style-type: none;
+}
+
+#parcours>h2
+{
+    font-size: 3rem;
+}
+
+#perso>h2
+{
+    font-size: 3rem;
+}
+
+#imgBox
+{
+    text-align: center;
+    justify-content: space-around;
+}
+
+#imgBox img
+{
+    display: inline-block;
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+/* === PAGE 4 =================================== */
+
+#p4
+{
+    background-color: var(--dark);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 90px 358px 358px 90px ;
+    grid-template-columns: 184px 641px 184px 641px 184px;
+    grid-template-areas: 
+    "area1 area2 area2 area2 area3"
+    "area4 area5 area6 area7 area8"
+    "area9 area10 area11 area12 area13"
+    "area14 area15 area16 area17 area18";
+}
+
+#p4 h2
+{
+    grid-area: area2;
+    text-align: center;
+}
+
+
+#card1
+{
+    grid-area: area5;
+}
+
+#card2
+{
+    grid-area: area7;
+}
+
+#card3
+{
+    grid-area: area10;
+}
+
+#card4
+{
+    grid-area: area12;
+}
+
+.card
+{
+    background-color: var(--orange);
+    padding: 5px 30px 0 30px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.card img
+{
+    width: 100%;
+    height: 150px;
+}
+
+#card1 h3
+{
+margin-top: 10px;
+}
+
+#git_container
+{
+    position: absolute;
+    background-color: var(--blanc);
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    left: 43%;
+    top: 34vh;
+}
+
+#git_container a , #git_container img
+{
+    height: 95%;
+    width: 95%;
+    left: 2.5%;
+    top: 2.5%;
+    position: absolute;
+}
+
+
+/* === PAGE 5 =================================== */
+
+#p5
+{
+    background-color: var(--dark);
+}
+
+#contacter
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70vh;
+    width: 50vw;
+    top: 15%;
+    left: 25vw;
+    padding: 15px;
+}
+
+#contacter>h1
+{
+    position: absolute;
+    top: 0;
+    left: 22%;
+    font-size: 4rem;
+    text-align: center;
+    min-width: 524px;
+}
+
+#formContainer
+{
+    position: absolute;
+    height: 70%;
+    width: 50%;
+    left: calc(50% / 2);
+    box-shadow: 0px 5px 31px 7px rgba(255, 117, 23, 0.534);
+    background-color: var(--dark);
+
+}
+
+#formulaire
+{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+input, textarea
+{
+    margin-top: 5%;
+}
+
+label
+{
+    font-style: italic;
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+#valider
+{
+    position: absolute;
+    width: 20%;
+    left: 40%;
+    top: 80%;
+}
