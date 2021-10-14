@@ -21,6 +21,7 @@
 </head>
 <body>
     <header id="header">
+        <div id="ac">Anthony CORGIER</div>
         <nav id="nav">
             <ul>
                 <a href="#p1" id="accueil"     onclick="portfolio.planSwitch('p1');"><li>Accueil</li></a>
@@ -65,21 +66,27 @@
                 <h2>Formulaire de contact</h2>
                 <div>
                     <form id=\"formulaire\" action=\"\"  method=\"post\" novalidate>
-                        <input id=\"prenom\" type=\"text\" name=\"prenom\" placeholder=\"Votre prénom\" \" required />
-                        <div class=\"valid-feedback\">Looks good!</div>
-                        <div id=\"validationServerUsernameFeedback\" class=\"invalid-feedback\">Entrer un prénom valide!</div>
-                        <label for=\"prenom\">Votre prénom</label>
-                        <input id=\"nom\" type=\"text\" name=\"nom\" placeholder=\"Votre nom\" required />
-                        <label for=\"nom\">Votre nom</label>
-                        <div class=\"valid-feedback\">Looks good!</div>
-                        <div id=\"validationServerUsernameFeedback\" class=\"invalid-feedback\">Entrer un nom valide!</div>
-                        <input id=\"mail\" type=\"email\" name=\"mail\" placeholder=\"Votre adresse e-mail\" required />
-                        <label for=\"mail\">Votre adresse e-mail</label>
-                        <div class=\"valid-feedback\">Looks good!</div>
-                        <div id=\"validationServerUsernameFeedback\" class=\"invalid-feedback\">Entrer un prénom valide!</div>
-                        <textarea id=\"textArea\" name=\"textArea\" id=\"textArea\" cols=\"20\" rows=\"6\"></textarea>
-                        <label for=\"textArea\">Veuillez saisir votre message.</label>
-                        <input id=\"valider\" type=\"submit\" value=\"Valider\">
+                        <div id=\"champs\">
+                            <div>
+                                <input id=\"prenom\" type=\"text\" name=\"prenom\" placeholder=\"Votre prénom\" \" required />
+                                <label for=\"prenom\">Votre prénom</label>
+                            </div>
+                            <div>
+                                <input id=\"nom\" type=\"text\" name=\"nom\" placeholder=\"Votre nom\" required />
+                                <label for=\"nom\">Votre nom</label>
+                            </div>
+                            <div>
+                                <input id=\"mail\" type=\"email\" name=\"mail\" placeholder=\"Votre adresse e-mail\" required />
+                                <label for=\"mail\">Votre adresse e-mail</label>
+                            </div>
+                            <div>
+                                <textarea id=\"textArea\" name=\"textArea\" id=\"textArea\" cols=\"20\" rows=\"6\"></textarea>
+                                <label for=\"textArea\">Veuillez saisir votre message.</label>
+                            </div>
+                        </div>
+                        <div id=\"boutons\">
+                            <input id=\"valider\" type=\"submit\" value=\"Valider\">
+                        </div>
                     </form>
                 </div>";
         section("p5",$HTML);

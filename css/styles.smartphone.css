@@ -20,6 +20,11 @@ header
 
 /* === NAV ====================================== */
 
+#ac
+{
+    display: none;
+}
+
 #nav_button
 {
     display: block;
@@ -111,7 +116,7 @@ main
 {
     width: 80%;
     margin-left: 10%;
-    font-size: 25px;
+    font-size: 16px;
     padding: 25px 0 0 0;
     margin-top: 0;
     box-shadow: none;
@@ -224,7 +229,25 @@ main
 {
     width: 84%;
     box-shadow: none;
-    margin-left: 0;
+    margin: 0 !important;
+}
+
+#formulaire
+{
+    flex-direction: column !important;
+    padding-bottom: 20px;
+}
+
+#champs
+{
+    width: 100%;
+}
+
+#boutons
+{
+    margin: 50px 0;
+    margin-left: calc(50% - 75px);
+
 }
 
 #p5 .illustration
@@ -236,8 +259,7 @@ main
 
 #valider
 {
-    width: 40%;
-    margin-left: 30%;
+    width: 150px;
 }
 
 
