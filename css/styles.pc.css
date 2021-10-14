@@ -199,7 +199,7 @@ article
 #main .animationVersArriere
 {
     animation-name: planVersArriere;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
 }
@@ -207,7 +207,7 @@ article
 #main .animationVersAvant
 {
     animation-name: planVersAvant;
-    animation-duration: 3s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
 }
@@ -234,7 +234,6 @@ article
 
     50%
     {
-        top: -80%;
         left: -90%;
         transform: translateZ(-15000px) rotateY(-90deg) rotateX(-10deg);
     }
@@ -257,7 +256,7 @@ article
     0%
     {
         position: absolute;
-        top: 90%;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100%;
@@ -322,7 +321,7 @@ article
     padding: 20px;
     width: 50%;
     box-shadow: 0 0 15px black;
-    /*overflow-y: scroll;*/
+    overflow-y: scroll;
 }
 
 .logos
@@ -359,6 +358,7 @@ article
     height: 34px;
     width: 41%;
     border-radius: 7px;
+    overflow: hidden;
 }
 
 #p1 .page div
