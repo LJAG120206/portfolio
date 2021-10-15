@@ -21,10 +21,6 @@ window.onresize = ()=>
     {
         $('nav').style.left = "-300px";
     }
-    else
-    {
-        $('nav').style.left = "0px";
-    }
 }
 
 portfolio = 
@@ -144,10 +140,6 @@ portfolio =
                 $("nav").style.left = "-300px";
             }
         }
-        else
-        {
-            $("nav").style.left = "0px";
-        }
     },
 
     planSwitch: (plan)=>
@@ -157,8 +149,22 @@ portfolio =
         {
             $(plan).className = "animationVersAvant";
             $(portfolio.plan).className = "animationVersArriere";
-
             portfolio.plan = plan;
+
+            let menuItems = ['accueil','qui','competences','projets','contact'];
+            menuItems.forEach(menuItem => {
+                $(menuItem).parentNode.classList.remove("menuItemOn");
+            });
+            
+
+            switch(plan)
+            {
+                case "p1" : $('accueil').parentNode.classList.add("menuItemOn"); break;
+                case "p2" : $('qui').parentNode.classList.add("menuItemOn"); break;
+                case "p3" : $('competences').parentNode.classList.add("menuItemOn"); break;
+                case "p4" : $('projets').parentNode.classList.add("menuItemOn"); break;
+                case "p5" : $('contact').parentNode.classList.add("menuItemOn"); break;
+            }
 
             portfolio.menuSwitch();
         }

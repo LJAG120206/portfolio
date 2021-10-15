@@ -24,11 +24,11 @@
         <div id="ac">Anthony CORGIER</div>
         <nav id="nav">
             <ul>
-                <a href="#p1" id="accueil"     onclick="portfolio.planSwitch('p1');"><li>Accueil</li></a>
-                <a href="#p2" id="qui"         onclick="portfolio.planSwitch('p2');"><li>Moi</li></a>
-                <a href="#p3" id="competences" onclick="portfolio.planSwitch('p3');"><li>Compétences</li></a>
-                <a href="#p4" id="projets"     onclick="portfolio.planSwitch('p4');"><li>Projets</li></a>
-                <a href="#p5" id="contact"     onclick="portfolio.planSwitch('p5');"><li>Contact</li></a>
+                <li><a href="#p1" id="accueil"     onclick="portfolio.planSwitch('p1');">Accueil</a></li>
+                <li><a href="#p2" id="qui"         onclick="portfolio.planSwitch('p2');">Moi</a></li>
+                <li><a href="#p3" id="competences" onclick="portfolio.planSwitch('p3');">Compétences</a></li>
+                <li><a href="#p4" id="projets"     onclick="portfolio.planSwitch('p4');">Projets</a></li>
+                <li><a href="#p5" id="contact"     onclick="portfolio.planSwitch('p5');">Contact</a></li>
             </ul>
         </nav>
     </header>
